@@ -4,7 +4,7 @@ class Envato {
 	private $bearer = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
 	private $apiAccountUrl = "https://api.envato.com/v1/market/private/user/account.json";
 	private $apiItemUrl = "https://api.envato.com/v3/market/catalog/item?id=xxxxxxxxx";
-	private $apiUserUrl = "https://api.envato.com/v1/market/user:osinskirafal.json";
+	private $apiUserUrl = "https://api.envato.com/v1/market/user:xxxxxxxxx.json";
 	private $header = [ ];
 	private $filename = "xxxxxxxxx.txt";
 
