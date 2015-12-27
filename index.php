@@ -1,12 +1,12 @@
 <?php
 
 class Envato {
-	private $bearer = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	private $bearer = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 	private $apiAccountUrl = "https://api.envato.com/v1/market/private/user/account.json";
-	private $apiItemUrl = "https://api.envato.com/v3/market/catalog/item?id=xxxxxxxxx";
-	private $apiUserUrl = "https://api.envato.com/v1/market/user:xxxxxxxxx.json";
+	private $apiItemUrl = "https://api.envato.com/v3/market/catalog/item?id=xxxxxxxxxxxxxxx";
+	private $apiUserUrl = "https://api.envato.com/v1/market/user:xxxxxxxxxxxxxxx.json";
 	private $header = [ ];
-	private $filename = "xxxxxxxxx.txt";
+	private $filename = "xxxxxxxxxxxxxxx.txt";
 
 	public function curlResponse( $url ) {
 		$bearer            = 'Bearer ' . $this->bearer;
@@ -31,7 +31,7 @@ class Envato {
 		$getCurlResponse = $this->curlResponse( $this->apiAccountUrl );
 
 		if ( '' !== $getCurlResponse ) {
-			$this->saveBalance( $current );
+			$this->saveBalance( $getCurlResponse->account->balance );
 
 			return $getCurlResponse->account->balance;
 		} else {
@@ -75,4 +75,3 @@ $envato = new Envato();
 echo $envato->getBalance();
 echo $envato->getItemsSales();
 echo $envato->getUserSales();
-?>
