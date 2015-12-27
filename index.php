@@ -1,9 +1,9 @@
 <?php
 
 class Envato {
-	private $bearer = "xxxxxxxxxxxxxxxxx";
+	private $bearer = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
 	private $apiAccountUrl = "https://api.envato.com/v1/market/private/user/account.json";
-	private $apiItemUrl = "https://api.envato.com/v3/market/catalog/item?id=xxxxxxxxxxxxxxxxx";
+	private $apiItemUrl = "https://api.envato.com/v3/market/catalog/item?id=xxxxxxxxx";
 	private $apiUserUrl = "https://api.envato.com/v1/market/user:osinskirafal.json";
 	private $header = [ ];
 	private $filename = "xxxxxxxxx.txt";
