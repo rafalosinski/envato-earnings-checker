@@ -1,12 +1,12 @@
 <?php
 
 class Envato {
-	private $bearer = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	private $bearer = "xxxxxxxxxxxxxxxxxxxxxxxx";
 	private $apiAccountUrl = "https://api.envato.com/v1/market/private/user/account.json";
-	private $apiItemUrl = "https://api.envato.com/v3/market/catalog/item?id=xxxxxxxxxxxxxxx";
-	private $apiUserUrl = "https://api.envato.com/v1/market/user:xxxxxxxxxxxxxxx.json";
+	private $apiItemUrl = "https://api.envato.com/v3/market/catalog/item?id=xxxxxxxxxxxx";
+	private $apiUserUrl = "https://api.envato.com/v1/market/user:xxxxxxxxxxxx.json";
 	private $header = [ ];
-	private $filename = "xxxxxxxxxxxxxxx.txt";
+	private $filename = "xxxxxxxxxxxx.txt";
 
 	public function curlResponse( $url ) {
 		$bearer            = 'Bearer ' . $this->bearer;
@@ -43,14 +43,19 @@ class Envato {
 	public function getUserSales() {
 		$getCurlResponse = $this->curlResponse( $this->apiUserUrl );
 
-		return $getCurlResponse->user->sales;
+		if ( '' !== $getCurlResponse )
+			return $getCurlResponse->user->sales;
+		else
+			false
 	}
 
 	public function getItemsSales() {
 		$getCurlResponse = $this->curlResponse( $this->apiItemUrl );
 
-		return $getCurlResponse->number_of_sales;
-
+		if ( '' !== $getCurlResponse )
+			return $getCurlResponse->number_of_sales;
+		else
+			false
 	}
 
 	public function saveBalance( $current ) {
